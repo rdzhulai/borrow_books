@@ -7,7 +7,7 @@ namespace Assignment1
         private string title;
         private int length;
         private Author author;
-        static int MINUTES_IN_HOUR;
+        private const int MINUTES_IN_HOUR = 60;
 
 
         public Book(string title, int length, string authorName)
@@ -30,6 +30,16 @@ namespace Assignment1
             int readingTimeInHours = (int)Math.Ceiling(
                 (double)readingTimeInMinutes / MINUTES_IN_HOUR);
             return readingTimeInHours;
+        }
+
+        public string Title
+        {
+            get { return title; }
+        }
+
+        public Author Author
+        {
+            get { return author; }
         }
     }
 }

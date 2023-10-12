@@ -41,14 +41,26 @@
             {
                 if (!record.Returned)
                     continue;
-                totalFee += record.GetFee(date);
-                record.Returned = true;
+                totalFee += record.ReturnBook(date);
             }
             return totalFee;
+        }
+
+        public float CalculateAllTimeFee(DateTime date)
+        {
+            float allTimeFee = reads.Aggregate(0f, (allTimeFee, record) =>
+                allTimeFee += record.GetFee(
+                record.Returned ? record.ReturnedTime : date));
+
+            return allTimeFee;
         }
         public int ReaderId
         {
             get { return readerId; }
+        }
+        public List<Record> Reads
+        {
+            get { return reads; }
         }
     }
 
