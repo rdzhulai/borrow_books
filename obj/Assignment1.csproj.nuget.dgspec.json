@@ -1,33 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\TUKE\\Teaching\\2023-PVJC#\\Assignment1\\Assignment1\\Assignment1.csproj": {}
+    "/home/rdz/Code/csharp/Assignment1/Assignment1/Assignment1.csproj": {}
   },
   "projects": {
-    "C:\\TUKE\\Teaching\\2023-PVJC#\\Assignment1\\Assignment1\\Assignment1.csproj": {
+    "/home/rdz/Code/csharp/Assignment1/Assignment1/Assignment1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\TUKE\\Teaching\\2023-PVJC#\\Assignment1\\Assignment1\\Assignment1.csproj",
+        "projectUniqueName": "/home/rdz/Code/csharp/Assignment1/Assignment1/Assignment1.csproj",
         "projectName": "Assignment1",
-        "projectPath": "C:\\TUKE\\Teaching\\2023-PVJC#\\Assignment1\\Assignment1\\Assignment1.csproj",
-        "packagesPath": "C:\\Users\\jmagy\\.nuget\\packages\\",
-        "outputPath": "C:\\TUKE\\Teaching\\2023-PVJC#\\Assignment1\\Assignment1\\obj\\",
+        "projectPath": "/home/rdz/Code/csharp/Assignment1/Assignment1/Assignment1.csproj",
+        "packagesPath": "/home/rdz/.nuget/packages/",
+        "outputPath": "/home/rdz/Code/csharp/Assignment1/Assignment1/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\jmagy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/rdz/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "http://hades.cit.fei.tuke.sk:8080/v3/index.json": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -61,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.401/RuntimeIdentifierGraph.json"
         }
       }
     }

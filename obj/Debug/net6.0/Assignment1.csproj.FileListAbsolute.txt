@@ -1,0 +1,14 @@
+/home/rdz/Code/csharp/Assignment1/Assignment1/bin/Debug/net6.0/Assignment1
+/home/rdz/Code/csharp/Assignment1/Assignment1/bin/Debug/net6.0/Assignment1.deps.json
+/home/rdz/Code/csharp/Assignment1/Assignment1/bin/Debug/net6.0/Assignment1.runtimeconfig.json
+/home/rdz/Code/csharp/Assignment1/Assignment1/bin/Debug/net6.0/Assignment1.dll
+/home/rdz/Code/csharp/Assignment1/Assignment1/bin/Debug/net6.0/Assignment1.pdb
+/home/rdz/Code/csharp/Assignment1/Assignment1/obj/Debug/net6.0/Assignment1.GeneratedMSBuildEditorConfig.editorconfig
+/home/rdz/Code/csharp/Assignment1/Assignment1/obj/Debug/net6.0/Assignment1.AssemblyInfoInputs.cache
+/home/rdz/Code/csharp/Assignment1/Assignment1/obj/Debug/net6.0/Assignment1.AssemblyInfo.cs
+/home/rdz/Code/csharp/Assignment1/Assignment1/obj/Debug/net6.0/Assignment1.csproj.CoreCompileInputs.cache
+/home/rdz/Code/csharp/Assignment1/Assignment1/obj/Debug/net6.0/Assignment1.dll
+/home/rdz/Code/csharp/Assignment1/Assignment1/obj/Debug/net6.0/refint/Assignment1.dll
+/home/rdz/Code/csharp/Assignment1/Assignment1/obj/Debug/net6.0/Assignment1.pdb
+/home/rdz/Code/csharp/Assignment1/Assignment1/obj/Debug/net6.0/Assignment1.genruntimeconfig.cache
+/home/rdz/Code/csharp/Assignment1/Assignment1/obj/Debug/net6.0/ref/Assignment1.dll

@@ -39,10 +39,20 @@ namespace Assignment1
                     columns[(int)csvColumns.bookName], int.Parse(columns[(int)csvColumns.length]), columns[(int)csvColumns.authorName]);
 
                 var readerId = int.Parse(columns[(int)csvColumns.readerId]);
-                var reader = readers.SingleOrDefault(
-                    r => r.ReaderId == readerId, new Reader(
-                        GetRandomName(), readerId, GetRandomReadingSpeed()));
-                var author = authors.SingleOrDefault(a => a.GetAuthorName().Equals(columns[(int)csvColumns.authorName]), new Author(columns[(int)csvColumns.authorName]));
+                var reader = readers.Find(r => r.ReaderId == readerId);
+                if (reader is null)
+                {
+                    reader = new Reader(GetRandomName(), readerId, GetRandomReadingSpeed());
+                    readers.Add(reader);
+                }
+
+                var author = authors.Find(a => a.GetAuthorName()
+                    .Equals(columns[(int)csvColumns.authorName]));
+                if (author is null)
+                {
+                    author = new Author(columns[(int)csvColumns.authorName]);
+                    authors.Add(author);
+                }
 
                 var borrowedTime = DateTime.ParseExact(
                     columns[(int)csvColumns.borrowedTime], "yyyy-MM-dd", CultureInfo.InvariantCulture);
@@ -107,7 +117,9 @@ namespace Assignment1
 
         static void Main(string[] args)
         {
-
+            // string path = "sources/mini-input.txt";
+            var records = LoadRecords("sources/input.txt");
+            Console.WriteLine(records[1].Reader.ReturnBooks(new DateTime(2024, 2, 4)));
         }
     }
 }

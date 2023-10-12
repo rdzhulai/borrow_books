@@ -1,0 +1,17 @@
+Stephen King,Needful Things,690,245187,2023-08-17,2023-09-08
+Max Tegmark,Life 3.0,280,2698741,2023-09-16,
+Agatha Christie,Murder of Roger Ackroyd,250,336589,2023-09-05,2023-10-24
+Ernest Hemingway,Old Man and the Sea,112,958742,2023-08-15,2023-10-21
+Ursula Guin,Left Hand of Darkness,310,361247,2023-07-10,
+Leo Tolstoy,Kafka on the Shore,360,958742,2023-06-25,2023-09-19
+Leo Tolstoy,One Hundred Years of Solitude,432,592187,2023-05-28,
+Leo Tolstoy,Game of Thrones,694,998213,2023-04-15,2023-09-15
+Leo Tolstoy,War and Peace,800,122456,2023-03-10,
+Agnes Martin,Collected Writings,192,784526,2023-02-08,2023-07-13
+Ursula Guin,Left Hand of Darkness,310,2698741,2023-01-12,2023-06-12
+Ray Bradbury,Fahrenheit 451,196,634725,2022-12-15,2023-05-16
+Mark Twain,Old Man and the Sea,112,2698741,2022-11-18,
+Joy Tolkien,Fellowship of the Ring,412,532197,2022-10-21,2023-03-21
+Ursula Guin,Left Hand of Darkness,310,789456,2022-09-25,
+Hugo Wells,War of the Worlds,234,2698741,2022-08-28,2023-01-28
+Kurt Vonnegut,Slaughterhouse-Five,215,354678,2022-07-30,2023-01-01
