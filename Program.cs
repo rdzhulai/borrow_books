@@ -118,8 +118,8 @@ namespace Assignment1
         static void Main(string[] args)
         {
             // string path = "sources/mini-input.txt";
-            var records = LoadRecords("sources/input.txt");
-            Console.WriteLine(records[1].Reader.ReturnBooks(new DateTime(2024, 2, 4)));
+            // var records = LoadRecords("sources/input.txt");
+            // Console.WriteLine(records[1].Reader.ReturnBooks(new DateTime(2024, 2, 4)));
         }
     }
 }
