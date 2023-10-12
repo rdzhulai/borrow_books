@@ -12,12 +12,13 @@
         static float EXTRA_DAY_FEE = .1f;
         static int FREE_MONTHS = 1;
 
-        public Record(Book book, Reader reader, DateTime borrowed)
+        public Record(
+            Book book, Reader reader, DateTime borrowed, bool returned = false)
         {
             this.book = book;
             this.reader = reader;
             this.borrowed = borrowed;
-            returned = false;
+            this.returned = returned;
         }
 
         public float GetFee(DateTime date)
