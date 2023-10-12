@@ -20,7 +20,7 @@
             int totalReadingTime = 0;
             foreach (Record record in reads)
             {
-                totalReadingTime += record.book.GetReadingTime(
+                totalReadingTime += record.Book.GetReadingTime(
                     readingSpeed, false);
             }
             return totalReadingTime;
@@ -28,7 +28,7 @@
 
         public void AddReading(Record record)
         {
-            if (record.reader.readerId == readerId)
+            if (record.Reader.ReaderId == readerId)
             {
                 reads.Add(record);
             }
@@ -39,10 +39,10 @@
             float totalFee = .0f;
             foreach (Record record in reads)
             {
-                if (!record.returned)
+                if (!record.Returned)
                     continue;
                 totalFee += record.GetFee(date);
-                record.returned = true;
+                record.Returned = true;
             }
             return totalFee;
         }
