@@ -2,10 +2,10 @@
 {
     public class Record
     {
-        private Book book { get; }
-        private Reader reader { get; }
+        private Book book;
+        private Reader reader;
         private DateTime borrowed;
-        private bool returned { get; set; }
+        private bool returned;
 
         static int DAYS_IN_MONTH = 30;
         static int EXTRA_MONTH_FEE = 5;
@@ -32,5 +32,19 @@
             return (months - FREE_MONTHS) * EXTRA_MONTH_FEE
                  + days * EXTRA_DAY_FEE;
         }
+        public Book Book
+        {
+            get { return book; }
+        }
+        public Reader Reader
+        {
+            get { return reader; }
+        }
+        public bool Returned
+        {
+            get { return returned; }
+            set { returned = value; }
+        }
     }
+
 }
