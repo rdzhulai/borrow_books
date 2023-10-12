@@ -21,16 +21,15 @@ namespace Assignment1
 
         public int GetReadingTime(float minutesPerPage, bool inHours)
         {
-            if (inHours)
+            int readingTimeInMinutes = (int)Math.Ceiling(
+                minutesPerPage * length);
+            if (!inHours)
             {
-                return (int)Math.Ceiling(
-                    minutesPerPage / MINUTES_IN_HOUR * length);
+                return readingTimeInMinutes;
             }
-            else
-            {
-                return (int)Math.Ceiling(minutesPerPage * length);
-            }
-
+            int readingTimeInHours = (int)Math.Ceiling(
+                (double)readingTimeInMinutes / MINUTES_IN_HOUR);
+            return readingTimeInHours;
         }
     }
 }
