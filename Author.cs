@@ -24,6 +24,15 @@
             this.lastName = lastName;
         }
 
+        public Author(string name)
+        {
+            string[] splittedName = name.Split(' ');
+            if (!IsNameValid(splittedName[0], splittedName[1]))
+                throw new ArgumentException();
+            firstName = splittedName[0];
+            lastName = splittedName[1];
+        }
+
         public void SetAuthorName(string firstName, string lastName)
         {
             if (IsNameValid(firstName, lastName))

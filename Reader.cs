@@ -17,12 +17,10 @@
 
         public int GetTotalReadingTime()
         {
-            int totalReadingTime = 0;
-            foreach (Record record in reads)
-            {
-                totalReadingTime += record.Book.GetReadingTime(
-                    readingSpeed, false);
-            }
+            int totalReadingTime = reads.Aggregate(
+                0, (totalReadingTime, record) => totalReadingTime
+                += record.Book.GetReadingTime(readingSpeed, false));
+
             return totalReadingTime;
         }
 
@@ -36,13 +34,10 @@
 
         public float ReturnBooks(DateTime date)
         {
-            float totalFee = .0f;
-            foreach (Record record in reads)
-            {
-                if (!record.Returned)
-                    continue;
-                totalFee += record.ReturnBook(date);
-            }
+            float totalFee = reads.Aggregate(
+                0f, (totalFee, record) =>
+                totalFee += record.Returned ? 0 : record.ReturnBook(date));
+
             return totalFee;
         }
 

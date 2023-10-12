@@ -21,26 +21,34 @@ namespace Assignment1
         {
             return rand.NextSingle() * (MAX_READING_SPEED_IN_MINUTES - MIN_READING_SPEED_IN_MINUTES) + MIN_READING_SPEED_IN_MINUTES;
         }
+        private enum csvColumns
+        {
+            authorName = 0, bookName = 1, length = 2, readerId = 3, borrowedTime = 4, returnedTime = 5
+        }
         static List<Record> LoadRecords(string path)
         {
             var records = new List<Record>();
             var readers = new List<Reader>();
+            var authors = new List<Author>();
 
             foreach (var csvRow in File.ReadAllLines(path))
             {
                 var columns = csvRow.Split(',');
 
                 var book = new Book(
-                    columns[1], int.Parse(columns[2]), columns[0]);
+                    columns[(int)csvColumns.bookName], int.Parse(columns[(int)csvColumns.length]), columns[(int)csvColumns.authorName]);
 
-                var readerId = int.Parse(columns[3]);
+                var readerId = int.Parse(columns[(int)csvColumns.readerId]);
                 var reader = readers.SingleOrDefault(
                     r => r.ReaderId == readerId, new Reader(
                         GetRandomName(), readerId, GetRandomReadingSpeed()));
+                var author = authors.SingleOrDefault(a => a.GetAuthorName().Equals(columns[(int)csvColumns.authorName]), new Author(columns[(int)csvColumns.authorName]));
+
                 var borrowedTime = DateTime.ParseExact(
-                    columns[4], "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                    columns[(int)csvColumns.borrowedTime], "yyyy-MM-dd", CultureInfo.InvariantCulture);
+
                 Record record;
-                if (columns[5] == "")
+                if (columns[(int)csvColumns.returnedTime].Equals(""))
                 {
                     var returned = false;
                     record = new Record(book, reader, borrowedTime, returned);
@@ -48,7 +56,7 @@ namespace Assignment1
                 else
                 {
                     var returnedTime = DateTime.ParseExact(
-                        columns[5], "yyyy-MM-dd",
+                        columns[(int)csvColumns.returnedTime], "yyyy-MM-dd",
                         CultureInfo.InvariantCulture);
                     record = new Record(
                         book, reader, borrowedTime, returnedTime);

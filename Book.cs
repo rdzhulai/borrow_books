@@ -14,9 +14,14 @@ namespace Assignment1
         {
             this.title = title;
             this.length = length;
-            string[] authorFirstLastNames = authorName.Split(' ');
-            author = new Author(
-                authorFirstLastNames[0], authorFirstLastNames[1]);
+            author = new Author(authorName);
+        }
+
+        public Book(string title, int length, Author author)
+        {
+            this.title = title;
+            this.length = length;
+            this.author = author;
         }
 
         public int GetReadingTime(float minutesPerPage, bool inHours)
