@@ -1,4 +1,5 @@
 ﻿
+using System.Data;
 using System.Globalization;
 
 namespace Assignment1
@@ -7,16 +8,8 @@ namespace Assignment1
     {
         // 1. load from file as a list of records (2p)
         private static Random rand = new Random();
-        private static string[] allFirstNames = File.ReadAllLines(
-                    "sources/first_names.txt");
-        private static string[] allLastNames = File.ReadAllLines(
-                    "sources/last_names.txt");
         private const float MAX_READING_SPEED_IN_MINUTES = 10f;
         private const float MIN_READING_SPEED_IN_MINUTES = 4f;
-        private static string GetRandomName()
-        {
-            return String.Join(" ", allFirstNames[rand.Next(allFirstNames.Length)], allLastNames[rand.Next(allLastNames.Length)]);
-        }
         private static float GetRandomReadingSpeed()
         {
             return rand.NextSingle() * (MAX_READING_SPEED_IN_MINUTES - MIN_READING_SPEED_IN_MINUTES) + MIN_READING_SPEED_IN_MINUTES;
@@ -42,7 +35,7 @@ namespace Assignment1
                 var reader = readers.Find(r => r.ReaderId == readerId);
                 if (reader is null)
                 {
-                    reader = new Reader(GetRandomName(), readerId, GetRandomReadingSpeed());
+                    reader = new Reader("XXXXX", readerId, GetRandomReadingSpeed());
                     readers.Add(reader);
                 }
 
@@ -58,7 +51,7 @@ namespace Assignment1
                     columns[(int)csvColumns.borrowedTime], "yyyy-MM-dd", CultureInfo.InvariantCulture);
 
                 Record record;
-                if (columns[(int)csvColumns.returnedTime].Equals(""))
+                if (columns.Length >= (int)csvColumns.returnedTime)
                 {
                     var returned = false;
                     record = new Record(book, reader, borrowedTime, returned);
@@ -102,7 +95,7 @@ namespace Assignment1
         {
             var records = LoadRecords(path);
 
-            return records.OrderByDescending(x => x.Reader.Reads.Count())
+            return records.OrderByDescending(x => x.Reader.Reads.Count)
                 .First().Reader.ReaderId;
         }
 
@@ -117,9 +110,11 @@ namespace Assignment1
 
         static void Main(string[] args)
         {
-            // string path = "sources/mini-input.txt";
-            // var records = LoadRecords("sources/input.txt");
-            // Console.WriteLine(records[1].Reader.ReturnBooks(new DateTime(2024, 2, 4)));
+            Console.WriteLine(FindMostReadBook("library_records.csv"));
+            Console.WriteLine(FindMostReadAuthor("library_records.csv"));
+            Console.WriteLine(FindMostAvidReader("library_records.csv"));
+            Console.WriteLine(CalculateIncome(
+                "library_records.csv", new DateTime(2023, 11, 1)));
         }
     }
 }
